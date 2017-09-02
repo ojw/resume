@@ -1,0 +1,191 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{James Orr}}
+
+\ \ Cincinnati, Oh\ \ \textbullet
+\ \ orrjamesw@gmail.com\ \ \textbullet
+\ \ (513) 237-8108
+\end{center}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Experience}
+
+\begin{itemize}
+  \parskip=0.1em
+
+\item
+  \headerrow
+      {\textbf{Projetech, Inc.}}
+      {\textbf{Cincinnati, OH}}
+      \\
+	\headerrow
+		{\emph{Software Developer}}
+		{\emph{2013 -- Present}}
+	\begin{itemize*}
+	\item Install Manager
+          \begin{itemize*}
+          \item
+            Major internal project to automate building, managing, and upgrading IBM Maximo applications and databases and capturing configuration.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Written in Clojure and ClojureScript.  15k lines including clj, cljs, tests.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Lead development -- managed team of 3-4, including training co-op students in Clojure, functional programming, general programming, and tools like git.  Planned and lead sprint planning and retrospectives, backlog grooming, code review.
+          \end{itemize*}
+          \begin{itemize*}
+          \item Build nodes run in every datacenter and receive jobs and automatic updates from central server.  Central server provides UI for regular users and admin tasks.  Business processes are reified as dependency graphs, built using a combination of a graph-building DSL, a DSL for specifying cross-cutting business rules, and a dependency solver.
+          \end{itemize*}
+          \begin{itemize*}
+          \item Turned time-consuming, error-prone tasks performed by developers into simple, reliable process performed by technical support analysts.  In production use since late 2016, for hundreds (>350 as of 2017/09/02) of jobs.
+          \end{itemize*}
+          \begin{itemize*}
+          \item Referenced by business team as an important differentiator between our cloud offering and IBM's.
+          \end{itemize*}
+
+	\item Sync Tool
+
+          \begin{itemize*}
+          \item Integration tool with client/server architecture, admin web console, client health monitoring, automatically updating service running in client datacenters, support for multiple database backends, substantial configurability.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Client-local service, web console, and central server written in Clojure, with python scripts running on IBM Maximo.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Lead development, working with one co-op student.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Delivered on time (on an aggressive timeline), with stretch features.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Sales lead says that the tool was a key selling point allowing him to sell our services to a major client (at the time, our 2nd largest).
+          \end{itemize*}
+
+	\item Developer Co-op Program
+          \begin{itemize*}
+          \item Ran the developer co-op program.
+          \end{itemize*}
+          \begin{itemize*}
+          \item This was a fun opportunity to use my education background, and transitioned into a role as the lead on a major, long-running project.
+          \end{itemize*}
+          \begin{itemize*}
+          \item Receive consistently positive reviews from students.
+          \end{itemize*}
+
+        \item Miscelaneous Other Projects
+          \begin{itemize*}
+          \item Monitoring Integration -- Monitoring was managed manually, leading to errors, missed clients, and inconsistency.  Developed tools to automatically, consistenly monitor assets.
+          \end{itemize*}
+          \begin{itemize*}
+          \item Change Process -- Formed and lead a cross-department team to gather requirement and develop a formal change process that worked for everyone.  Implemented that workflow on our internal work management platform.
+          \end{itemize*}
+
+          \begin{itemize*}
+          \item Time Tracking -- Developed data model and front-end application for time entry on our internal work management platform.
+          \end{itemize*}
+
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{University of Cincinnati Clermont College}}
+		{\textbf{Batavia, OH}}
+	\\
+	\headerrow
+		{\emph{Academic Tutor \& Adjunct Instructor}}
+		{\emph{2009 -- 2013}}
+	\begin{itemize*}
+		\item Awarded 2012 Lighthouse Award for outstanding work with special-needs students.
+		\item Worked full-time tutoring mathematics, and taught a class.
+	\end{itemize*}
+
+\end{itemize}
+
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Education}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{Otterbein College}}
+		{\textbf{Columbus, OH}}
+	\\
+	\headerrow
+		{\emph{B.S. Mathematics, Minor Computer Science}}
+		{\emph{2004 -- 2008}}
+	\begin{itemize*}
+		\item Won math department ``problem of the week'' competition every quarter it was offered.
+	\end{itemize*}
+
+\end{itemize}
+
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Core Technical Skills}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+	\item[Languages:]
+	C, \CPP, Java, JavaScript, \LaTeX, Perl, Python, shell script, SQL
+	\item[Open Source Contributions:]
+	Project A, Project B, Project C
+\end{description*}
+\end{indentsection}
+
+\end{document}
